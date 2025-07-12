@@ -3,9 +3,15 @@ import { ChevronDown, Github, Linkedin, Mail } from 'lucide-react';
 
 const Hero = () => {
   const scrollToAbout = () => {
-    const aboutSection = document.getElementById('about');
-    if (aboutSection) {
-      aboutSection.scrollIntoView({ behavior: 'smooth' });
+    try {
+      const aboutSection = document.getElementById('about');
+      if (aboutSection) {
+        aboutSection.scrollIntoView({ behavior: 'smooth' });
+      } else {
+        console.warn('About section not found');
+      }
+    } catch (error) {
+      console.error('Error scrolling to about section:', error);
     }
   };
 
@@ -47,7 +53,7 @@ const Hero = () => {
 
         <div className="flex justify-center space-x-6 mb-16">
           <a
-            href="https://github.com/manojkumar" // Example real URL
+            href="https://github.com/manojkumar788961"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="GitHub profile"
@@ -56,7 +62,7 @@ const Hero = () => {
             <Github size={24} className="text-gray-700" />
           </a>
           <a
-            href="https://linkedin.com/in/manojkumar" // Example real URL
+            href="https://www.linkedin.com/in/manoj-kumar-82850a326"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn profile"

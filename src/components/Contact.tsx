@@ -25,17 +25,23 @@ const Contact = () => {
       alert('Please fill in all fields before sending your message.');
       return;
     }
-    const subject = encodeURIComponent(formData.subject || 'Hello from your portfolio website');
-    const body = encodeURIComponent(
-      `Hi Manoj,\n\n` +
-      `Name: ${formData.name || '[Your Name]'}\n\n` +
-      `${formData.message || 'I visited your portfolio and would like to get in touch.\n\nBest regards,'}\n\n` +
-      `---\n` +
-      `This message was sent from your portfolio website.`
-    );
     
-    const mailtoLink = `mailto:manojkumar788961@gmail.com?subject=${subject}&body=${body}`;
-    window.open(mailtoLink, '_self');
+    try {
+      const subject = encodeURIComponent(formData.subject);
+      const body = encodeURIComponent(
+        `Hi Manoj,\n\n` +
+        `Name: ${formData.name}\n\n` +
+        `${formData.message}\n\n` +
+        `---\n` +
+        `This message was sent from your portfolio website.`
+      );
+      
+      const mailtoLink = `mailto:manojkumar788961@gmail.com?subject=${subject}&body=${body}`;
+      window.open(mailtoLink, '_self');
+    } catch (error) {
+      console.error('Error creating email link:', error);
+      alert('There was an error creating the email. Please try again.');
+    }
   };
 
   const handleQuickEmail = (type: 'collaboration' | 'opportunity' | 'general') => {
@@ -63,10 +69,15 @@ const Contact = () => {
   };
 
   const handleDirectEmail = () => {
-    const subject = encodeURIComponent('Hello from your portfolio website');
-    const body = encodeURIComponent('Hi Manoj,\n\nI visited your portfolio and would like to get in touch.\n\nBest regards,');
-    const mailtoLink = `mailto:manojkumar788961@gmail.com?subject=${subject}&body=${body}`;
-    window.open(mailtoLink, '_self');
+    try {
+      const subject = encodeURIComponent('Hello from your portfolio website');
+      const body = encodeURIComponent('Hi Manoj,\n\nI visited your portfolio and would like to get in touch.\n\nBest regards,');
+      const mailtoLink = `mailto:manojkumar788961@gmail.com?subject=${subject}&body=${body}`;
+      window.open(mailtoLink, '_self');
+    } catch (error) {
+      console.error('Error creating direct email link:', error);
+      alert('There was an error creating the email. Please try again.');
+    }
   };
 
   return (
@@ -176,7 +187,7 @@ const Contact = () => {
               <h3 className="text-xl font-bold text-gray-900 mb-4">Connect with me</h3>
               <div className="flex space-x-4">
                 <a
-                  href="https://github.com/manojkumar" // Example real URL
+                  href="https://github.com/manojkumar788961"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="GitHub profile"
@@ -185,7 +196,7 @@ const Contact = () => {
                   <Github size={24} className="text-gray-700" />
                 </a>
                 <a
-                  href="https://linkedin.com/in/manojkumar" // Example real URL
+                  href="https://www.linkedin.com/in/manoj-kumar-82850a326"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="LinkedIn profile"

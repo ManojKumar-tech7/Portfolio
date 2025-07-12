@@ -36,14 +36,14 @@ const Skills = () => {
   ];
 
   const getColorClasses = (color: string) => {
-    const colors = {
+    const colors: Record<string, string> = {
       blue: 'bg-blue-100 text-blue-600 border-blue-200',
       teal: 'bg-teal-100 text-teal-600 border-teal-200',
       orange: 'bg-orange-100 text-orange-600 border-orange-200',
       purple: 'bg-purple-100 text-purple-600 border-purple-200',
       green: 'bg-green-100 text-green-600 border-green-200'
     };
-    return colors[color as keyof typeof colors] || colors.blue;
+    return colors[color] || colors.blue;
   };
 
   return (

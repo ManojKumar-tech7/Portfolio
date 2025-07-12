@@ -14,10 +14,16 @@ const Header = () => {
   }, []);
 
   const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-      setIsMenuOpen(false);
+    try {
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+        setIsMenuOpen(false);
+      } else {
+        console.warn(`Section with id "${id}" not found`);
+      }
+    } catch (error) {
+      console.error('Error scrolling to section:', error);
     }
   };
 
@@ -43,7 +49,7 @@ const Header = () => {
               </button>
             ))}
             <a
-              href="/resume.pdf"
+              href="/Resume.pdf"
               download="Manoj_Kumar_Resume.pdf"
               className="flex items-center space-x-2 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors duration-200"
             >
@@ -75,7 +81,7 @@ const Header = () => {
                 </button>
               ))}
               <a
-                href="/resume.pdf"
+                href="/Resume.pdf"
                 download="Manoj_Kumar_Resume.pdf"
                 className="flex items-center space-x-2 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors duration-200 w-fit"
               >

@@ -37,14 +37,26 @@ const Projects = () => {
               <div>
                 <h3 className="text-2xl font-bold text-gray-900 mb-2">{project.title}</h3>
                 <div className="flex space-x-4">
-                  <button className="flex items-center space-x-2 text-blue-600 hover:text-blue-800 transition-colors duration-200">
+                  <a 
+                    href="https://github.com/manojkumar788961/petrol-consumption-predictor" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    aria-label="View project code on GitHub"
+                    className="flex items-center space-x-2 text-blue-600 hover:text-blue-800 transition-colors duration-200"
+                  >
                     <Github size={18} />
                     <span>View Code</span>
-                  </button>
-                  <button className="flex items-center space-x-2 text-teal-600 hover:text-teal-800 transition-colors duration-200">
+                  </a>
+                  <a 
+                    href="https://petrol-consumption-predictor.streamlit.app" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    aria-label="View live demo of the project"
+                    className="flex items-center space-x-2 text-teal-600 hover:text-teal-800 transition-colors duration-200"
+                  >
                     <ExternalLink size={18} />
                     <span>Live Demo</span>
-                  </button>
+                  </a>
                 </div>
               </div>
             </div>
