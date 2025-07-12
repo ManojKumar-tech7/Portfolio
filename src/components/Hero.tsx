@@ -53,7 +53,7 @@ const Hero = () => {
 
         <div className="flex justify-center space-x-6 mb-16">
           <a
-            href="https://github.com/manojkumar788961"
+            href="https://github.com/ManojKumar-tech7"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="GitHub profile"

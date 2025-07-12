@@ -187,7 +187,7 @@ const Contact = () => {
               <h3 className="text-xl font-bold text-gray-900 mb-4">Connect with me</h3>
               <div className="flex space-x-4">
                 <a
-                  href="https://github.com/manojkumar788961"
+                  href="https://github.com/ManojKumar-tech7"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="GitHub profile"

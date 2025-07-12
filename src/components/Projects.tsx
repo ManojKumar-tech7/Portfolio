@@ -38,7 +38,7 @@ const Projects = () => {
                 <h3 className="text-2xl font-bold text-gray-900 mb-2">{project.title}</h3>
                 <div className="flex space-x-4">
                   <a 
-                    href="https://github.com/manojkumar788961/petrol-consumption-predictor" 
+                    href="https://github.com/ManojKumar-tech7/petrol-consumption-predictor" 
                     target="_blank" 
                     rel="noopener noreferrer"
                     aria-label="View project code on GitHub"
